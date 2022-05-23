@@ -19,8 +19,9 @@ class CreateUserSercice {
         if(userAlreadyExists){
             throw new Error("User already exists");
         }
+        // Criando senha criptografada
         const passwordHash = await hash(password,8);
-
+        
         const user = await prismaClient.user.create({
             data:{
                 name:name,
