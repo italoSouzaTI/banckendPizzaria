@@ -4,8 +4,8 @@ import { SendOrderService } from '../../services/order/SendOrderService';
 class SendOrderController {
     async handle (req: Request, resp: Response) {
         const { order_id } = req.body;
-        const SendOrder = new SendOrderService();
-        const order = await SendOrder.execute({
+        const sendOrder = new SendOrderService();
+        const order = await sendOrder.execute({
             order_id
         })
         return resp.json(order);
