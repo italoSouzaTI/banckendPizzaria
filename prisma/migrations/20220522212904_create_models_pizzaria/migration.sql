@@ -29,7 +29,7 @@ CREATE TABLE "orders" (
     "id" TEXT NOT NULL,
     "table" INTEGER NOT NULL,
     "status" BOOLEAN NOT NULL DEFAULT false,
-    "draft" BOOLEAN NOT NULL DEFAULT false,
+    "draft" BOOLEAN NOT NULL DEFAULT true,
     "name" TEXT,
     "createde_at" TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP,
     "update_at" TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP,
