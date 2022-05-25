@@ -1,16 +1,16 @@
 import prismaClient from "../../prisma";
-class ListCategoryService{
-    async execute(){
+class ListCategoryService {
+    async execute () {
         const category = await prismaClient.category.findMany({
-            select:{
-                id:true,
-                name:true,
-            },where:{
-                createde_and:null
+            select: {
+                id: true,
+                name: true,
+            }, where: {
+                created_and: null
             }
         });
         return category;
     }
 }
 
-export {ListCategoryService};
+export { ListCategoryService };
