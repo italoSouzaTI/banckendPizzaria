@@ -9,7 +9,7 @@ class DetailUserService {
                 id:true,
                 name:true,
                 email:true,
-                createde_at:true,
+                created_at:true,
             }
         })
         return user;

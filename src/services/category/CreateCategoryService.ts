@@ -13,7 +13,7 @@ class CreateCategoryService{
             },select:{
                 id:true,
                 name:true,
-                createde_at:true
+                created_at:true
             }
         })
 

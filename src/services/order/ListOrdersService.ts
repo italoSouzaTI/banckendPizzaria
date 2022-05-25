@@ -8,7 +8,7 @@ class ListOrdersService {
                 status: false,
             },
             orderBy: {
-                createde_at: 'desc'
+                created_at: 'desc'
             }
         })
         return orders;
