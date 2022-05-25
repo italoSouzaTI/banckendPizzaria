@@ -12,12 +12,13 @@ datasource db {
 
 //Crtiar uma migration yarn prisma migraion
 model User {
-    id           String    @id @default(uuid())
-    name         String
-    email        String
-    password     String
-    createde_at  DateTime? @default(now())
-    update_at    DateTime? @default(now())
+    id       String @id @default(uuid())
+    name     String
+    email    String
+    password String
+
+    created_at   DateTime? @default(now())
+    updated_at   DateTime? @default(now())
     createde_and DateTime?
 
     @@map("users")
@@ -26,12 +27,12 @@ model User {
 model Category {
     id           String    @id @default(uuid())
     name         String
-    createde_at  DateTime? @default(now())
-    update_at    DateTime? @default(now())
+    created_at   DateTime? @default(now())
+    updated_at   DateTime? @default(now())
     createde_and DateTime?
 
     products Product[]
-    @@map("Categories")
+    @@map("categories")
 }
 
 model Product {
@@ -40,24 +41,25 @@ model Product {
     price        String
     description  String
     banner       String
-    createde_at  DateTime? @default(now())
-    update_at    DateTime? @default(now())
+    created_at   DateTime? @default(now())
+    updated_at   DateTime? @default(now())
     createde_and DateTime?
 
     category    Category @relation(fields: [category_id], references: [id])
     category_id String
     items       Item[]
-    @@map("produtcs")
+    @@map("products")
 }
 
 model Order {
-    id           String    @id @default(uuid())
-    table        Int
-    status       Boolean   @default(false)
-    draft        Boolean   @default(true)
-    name         String?
-    createde_at  DateTime? @default(now())
-    update_at    DateTime? @default(now())
+    id     String  @id @default(uuid())
+    table  Int
+    status Boolean @default(false)
+    draft  Boolean @default(true)
+    name   String?
+
+    created_at   DateTime? @default(now())
+    updated_at   DateTime? @default(now())
     createde_and DateTime?
 
     items Item[]
@@ -67,8 +69,8 @@ model Order {
 model Item {
     id           String    @id @default(uuid())
     amount       Int
-    createde_at  DateTime? @default(now())
-    update_at    DateTime? @default(now())
+    created_at   DateTime? @default(now())
+    updated_at   DateTime? @default(now())
     createde_and DateTime?
 
     order   Order   @relation(fields: [order_id], references: [id])
